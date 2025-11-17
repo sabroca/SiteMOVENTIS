@@ -1,0 +1,268 @@
+:root{
+  --primary:#004C97;
+  --text:#101828;
+  --muted:#475467;
+  --surface:#ffffff;
+  --surface-2:#f4f6f8;
+  --success:#19c37d;
+  --danger:#ff3b30;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Montserrat',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;color:var(--text);background:#fff}
+img{max-width:100%;display:block}
+.container{max-width:1140px;margin:0 auto;padding:0 20px}
+
+/* ===== Nav ===== */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
+.nav .brand img{height:34px}
+.menu{display:flex;gap:22px;align-items:center}
+.menu a{color:var(--text);text-decoration:none;font-weight:600}
+.menu a.btn{color:#fff}
+.menu a:hover{color:var(--primary)}
+.menu-toggle{display:none}
+.hamburger{display:none;cursor:pointer;padding:10px}
+.hamburger span{display:block;width:26px;height:3px;background:var(--text);margin:5px 0;border-radius:3px;transition:.3s}
+
+/* ===== Hero (imagem via background, texto à esquerda) ===== */
+.hero{
+  position:relative;
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(to right, #fff 0%, rgba(255,255,255,0.96) 40%, rgba(255,255,255,0.76) 58%, rgba(255,255,255,0.40) 70%, rgba(255,255,255,0) 100%),
+    url('assets/hero.png') right center / 60vw auto no-repeat;
+}
+.hero-content{width:100%;display:flex;justify-content:flex-start;align-items:center}
+.hero-text{max-width:620px}
+.hero h1{font-size:clamp(32px,4.6vw,56px);font-weight:800;line-height:1.1;margin:0 0 10px}
+.badge{display:inline-block;padding:8px 12px;border-radius:999px;background:rgba(0,76,151,.15);color:var(--primary);font-weight:800;margin-right:6px}
+.hero p{font-size:18px;color:var(--muted);margin:8px 0 0}
+.cta{display:flex;gap:12px;margin:24px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:12px;font-weight:700;text-decoration:none;border:2px solid transparent;transition:.25s;box-shadow:var(--shadow)}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{background:#fff;border:2px solid #e5e7eb;color:var(--primary)}
+.btn-ghost:hover{border-color:var(--primary)}
+.kpis{display:flex;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.kpi-pill{background:#fff;border:1px solid #e6eaf0;border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
+.kpi-num{font-weight:800;font-size:22px;color:#0b3a6a;display:block}
+.kpi-label{font-size:13px;color:#667085}
+.pilares{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;list-style:none;padding:0;margin:14px 0 0}
+.pilares li{display:flex;align-items:center;gap:8px;background:#f6f9ff;border:1px solid #e4ecff;padding:10px 12px;border-radius:10px;font-weight:600;color:#1f2a44}
+.pilares i{color:var(--primary)}
+.scroll-indicator{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);color:#667085;font-weight:500}
+
+/* ===== Sections ===== */
+.section{padding:80px 0}
+.section.alt{background:var(--surface-2)}
+.section h2{font-size:32px;margin:0 0 16px}
+.center{text-align:center}
+.align-center{align-items:center}
+.grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:40px}
+
+/* Feature cards */
+.feature-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.fcard{background:#fff;border:1px solid #eef2f6;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+.fcard i{font-size:26px;color:var(--primary)}
+.fcard h3{margin:10px 0 8px}
+
+/* Cards 3 */
+.cards-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cards-3 .card{background:#fff;border:1px solid #eef2f6;border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.cards-3 ul{margin:0;padding-left:18px}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.service{background:#fff;border:1px solid #eef2f6;border-radius:16px;padding:20px;box-shadow:var(--shadow);transition:.25s}
+.service:hover{transform:translateY(-4px)}
+.service i{font-size:28px;color:var(--primary)}
+.service h3{margin:10px 0 8px}
+
+/* ===== Planos ===== */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.plan-card{background:var(--primary);color:#fff;border-radius:28px;padding:28px;box-shadow:0 18px 40px rgba(0,0,0,.18);display:flex;flex-direction:column;gap:16px}
+.plan-card .plan-head{text-align:center}
+.plan-card .plan-head h3{margin:0;font-size:22px}
+.plan-card .price{margin-top:8px;font-size:26px;font-weight:800;color:#d7e7ff}
+
+/* CHECKLIST: Font Awesome (modelo 1) */
+.checklist.white li::before{content:none;}
+.checklist.white li.ok::before{
+  content:"\f00c";
+  font-family:"Font Awesome 6 Free";
+  font-weight:900;
+  color:var(--success);
+  background:rgba(25,195,125,0.1);
+  width:28px;height:28px;border-radius:8px;
+  display:inline-flex;justify-content:center;align-items:center;
+  margin-right:10px;
+}
+.checklist.white li.no::before{
+  content:"\f00d";
+  font-family:"Font Awesome 6 Free";
+  font-weight:900;
+  color:var(--danger);
+  background:rgba(255,76,76,0.1);
+  width:28px;height:28px;border-radius:8px;
+  display:inline-flex;justify-content:center;align-items:center;
+  margin-right:10px;
+}
+.checklist.white li{display:flex;align-items:center;font-weight:700;margin:6px 0}
+
+/* CTA dos planos */
+.btn-cta{display:inline-block;text-align:center;text-decoration:none;font-weight:800;background:#e6e6e6;color:#094074;border-radius:999px;padding:14px 20px;border:none;transition:.2s}
+.btn-cta:hover{filter:brightness(.95);transform:translateY(-2px)}
+.plan-card.featured{outline:3px solid rgba(255,255,255,.28)}
+
+/* Diferenciais */
+.highlights{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.highlight{background:#fff;border:1px solid #eef2f6;border-radius:14px;padding:16px;font-weight:700;display:flex;gap:10px;align-items:center}
+.highlight i{color:var(--primary)}
+
+/* Contato */
+.contact .form{background:#fff;border:1px solid #eef2f6;border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.field{display:flex;flex-direction:column;margin-bottom:14px}
+label{font-weight:700;margin-bottom:6px}
+input, textarea{padding:12px 14px;border-radius:12px;border:1px solid #d0d5dd;font:inherit}
+input:focus, textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 4px rgba(0,76,151,.08)}
+.error{display:none;color:#b42318;margin-top:6px;font-size:12px}
+.form-status{margin-top:12px;font-weight:700}
+.contact-card .card{background:#fff;border:1px solid #eef2f6;border-radius:16px;padding:18px;box-shadow:var(--shadow);margin-bottom:12px}
+
+/* Footer */
+.footer{background:#0b3a6a;color:#cbd5e1;padding:28px 0 36px;margin-top:40px}
+.footer-inner{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:16px;align-items:center}
+.foot-brand img{width:120px;filter:brightness(20) invert(1)}
+.foot-links a{display:inline-block;margin-right:16px;color:#cbd5e1;text-decoration:none}
+.foot-links a:hover{color:#fff}
+.foot-copy{justify-self:end}
+
+/* WhatsApp Floating */
+.wa-float{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;text-decoration:none;box-shadow:0 10px 25px rgba(0,0,0,.2);z-index:99}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ===== Responsive ===== */
+@media (max-width: 1080px){
+  .grid-2{grid-template-columns:1fr;gap:28px}
+}
+@media (max-width: 960px){
+  /* imagem vira banner de topo */
+  .hero{
+    min-height:auto;
+    background:
+      linear-gradient(to bottom, rgba(255,255,255,0.05) 0%, #fff 38%),
+      url('assets/hero.png') center top / cover no-repeat;
+  }
+  .hero-text{max-width:100%;text-align:center;padding-top:38vh}
+  .cta{justify-content:center;flex-wrap:wrap}
+  .pilares{grid-template-columns:1fr}
+  .services{grid-template-columns:1fr 1fr}
+  .cards-3{grid-template-columns:1fr 1fr}
+  .highlights{grid-template-columns:1fr 1fr}
+  .grid-3{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .foot-copy{justify-self:start}
+  .hamburger{display:block}
+  .menu{position:fixed;inset:70px 0 0 0;background:#fff;flex-direction:column;align-items:flex-start;padding:20px 24px;gap:14px;transform:translateY(-110%);transition:.28s;box-shadow:0 12px 24px rgba(0,0,0,.1)}
+  .menu a{padding:10px 6px}
+  #menu-toggle:checked ~ .menu{transform:none}
+}
+/* ===== FOOTER NOVO ===== */
+.footer{
+  background: var(--primary);
+  color: #ffffff;
+  padding: 40px 0 48px;
+  margin-top: 60px;
+}
+
+.footer .container{
+  text-align: center;
+}
+
+.footer-logo img{
+  width: 180px;
+  max-width: 60vw;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  /* se sua logo tiver fundo claro, remova o filtro abaixo */
+  filter: none;
+}
+
+.footer-tagline{
+  margin: 6px 0 18px;
+  opacity: .9;
+  font-weight: 600;
+}
+
+.footer-socials{
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer-socials a{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.25);
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+.footer-socials a:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.18);
+}
+
+.footer-socials .fa-instagram{ font-size: 20px; }
+.footer-socials .fa-whatsapp{ font-size: 22px; }
+
+.footer-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin: 10px 0 14px;
+}
+.footer-links a{
+  color: #ffffff;
+  opacity: .9;
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer-links a:hover{ opacity: 1; text-decoration: underline; }
+
+.footer-bottom{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  justify-content: center;
+  align-items: center;
+  opacity: .95;
+  margin-top: 6px;
+  font-weight: 600;
+}
+.footer-bottom .credit a{
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* opcional: ajusta o botão flutuante do WhatsApp para não sobrepor o footer */
+@media (max-width: 560px){
+  .wa-float{ bottom: 22px; right: 16px; }
+}
