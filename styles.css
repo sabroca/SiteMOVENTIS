@@ -30,7 +30,7 @@ img{max-width:100%;display:block}
   border-bottom:1px solid rgba(0,0,0,.06);
 }
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
-.nav .brand img{height:34px}
+.nav .brand img{height:60px}
 
 .menu{display:flex;gap:22px;align-items:center}
 .menu a{
